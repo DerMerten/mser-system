@@ -7,24 +7,24 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "sway/mode",
-        "sway/scratchpad",
-        "custom/media",
+    //    "sway/mode",
+    //    "sway/scratchpad",
+    //    "custom/media",
 	"cpu",
 	"memory",
 	"custom/auto-cpufreq",
+	"temperature",
 	"network"
     ],
     "modules-center": [
 	"hyprland/workspaces"
     ],
     "modules-right": [
-        "mpd",
+     //   "mpd",
         "idle_inhibitor",
         "pulseaudio",
-        "temperature",
         "backlight",
-        "keyboard-state",
+     //   "keyboard-state",
         "sway/language",
         "battery",
         "clock",
@@ -117,9 +117,9 @@
     },
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+         "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 100,
+        "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
@@ -157,20 +157,6 @@
         "power-saver": ""
       }
     },
-    "cus12tom/a12uto-cpufreq" : {
-      "format": "{icon}",
-      "tooltip-format": "{}",
-      "tooltip": true,
-      "escape" : true,
-      "exec": "/usr/local/bin/auto-cpufreq-status.sh",
-      "interval" : 10,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balance_power": "",
-        "powersave": ""
-      }
-    },
    "custom/auto-cpufreq" : {
       "format": "{}",
       "tooltip": true,
@@ -205,17 +191,5 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
