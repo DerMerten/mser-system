@@ -4,7 +4,7 @@ my config for my system
 install basic
 
 ```
-yay -S hyprland-git hyprpaper-git dunst-git ly-git waybar-git
+yay -S hyprland-git hyprpaper-git dunst-git ly-git waybar-git kitty-git
 ```
 install packages etc.
 
